@@ -41,16 +41,19 @@ const app = Vue.createApp({
             ],
             experience: [
                 { 
-                    content: 'WORK', 
+                    title: 'WORK', 
+                    content: '便利商店', 
                     img: './image/exp01.jpg' 
                 },
                 { 
-                    content: 'WORK', 
+                    title: 'WORK', 
+                    content: '餐飲業', 
                     img: './image/exp02.jpg' 
                 },
                 { 
-                    content: 'SCHOOL', 
-                    img: ''
+                    title: 'SCHOOL', 
+                    content: '台中科技大學', 
+                    img: './image/exp03.jpg'
                 },
             ],
             autobiography: [
@@ -59,10 +62,12 @@ const app = Vue.createApp({
                     content: '我是林郁軒，目前就讀國立台中科技大學，主修財務金融系。我熱愛閱讀與學習，也對財經相關領域有濃厚的興趣與嚮往。我願意付出實際行動，也願意接受新挑戰，「任何事情都全力以赴」是我人生的態度。'
                 },
                 {
-                    title: '【社團經歷】'
+                    title: '【社團經歷】',
+                    content: '學生時期，樂於服務也喜愛團隊活動的我，參加了許多社團與比賽，並在過程中常擔任領導角色，這些都是在我讀書之餘，更豐富了我的求學記憶。這讓我我學習到團隊的重要性以及與不同類型的人溝通協調的方式。'
                 },
                 {
-                    title: '【工作經歷】'
+                    title: '【工作經歷】',
+                    content: '本人先前的工作主要以服務業為主，經過學習，在工作中學習到如何與客人互動，以更禮貌、平和的態度對待客人。在工作培訓中，服務業相當具有挑戰性，除了需要隨時保持效率及微笑，我們也培訓出許多工作技能，在此我學習到如何善用資源，也真正了解到團隊的重要性。'
                 }
             ],
             certificate: [

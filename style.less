@@ -96,7 +96,7 @@ a {
 
     &::before {
         position: fixed;
-        bottom: 30.8%;
+        bottom: 28.8%;
         left: 12.3%;
         content: '';
         width: 30px;
@@ -108,17 +108,17 @@ a {
 
 .current-index-1 {
     &::before {
-        bottom: 30.8% !important;
+        bottom: 28.8% !important;
     }
 }
 .current-index-2 {
     &::before {
-        bottom: 23.8% !important;
+        bottom: 22.8% !important;
     }
 }
 .current-index-3 {
     &::before {
-        bottom: 16.8% !important;
+        bottom: 15.8% !important;
     }
 }
 .current-index-4 {
@@ -181,7 +181,6 @@ a {
             position: relative;
             width: 65%;
             height: 115%;
-            background-image: url(./image/experience01.jpg);
             background-position: 25% 75%;
             background-size: cover;
             align-self: flex-start;
@@ -279,7 +278,7 @@ a {
         .background-title {
             position: absolute;
             top: 30%;
-            left: 15%;
+            left: 10%;
             transform: rotate(-90deg);
             font-size: 5rem;
             font-weight: 700;
@@ -289,9 +288,13 @@ a {
         .background-content {
             position: absolute;
             top: 50%;
-            left: 45%;
+            left: 36%;
             font-size: 5rem;
             font-weight: 300;
+            div {
+                margin-left: 15px;
+                font-size: 2rem;
+            }
         }
 
         .experience-img {
@@ -299,7 +302,9 @@ a {
             left: 100%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 30%;
+            width: 40%;
+            height: 80%;
+            object-fit: cover;
         }
     }
 
@@ -312,7 +317,7 @@ a {
             cursor: pointer;
             margin: 20px 0;
             width: 50px;
-            height: 5px;
+            height: 8px;
             background-color: @color-dark;
             transition: .5s;
         }
@@ -334,7 +339,7 @@ a {
         width: 40%;
         height: 110%;
         margin-top: 2.5%;
-        background-image: url(./image/about.jpg);
+        background-image: url(./image/autobiography.jpg);
         background-size: cover;
     }
     .detail {
@@ -473,6 +478,7 @@ a {
                 width: 62%;
                 text-align: center;
                 border: 2px solid @color-orange;
+                transition: .5s;
             }
 
             .active {
