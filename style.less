@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -84,6 +85,53 @@ a {
     }
 }
 
+.header-design {
+    position: fixed;
+    bottom: 0;
+    left: 13%;
+    width: 3px;
+    height: 300px;
+    background-color: @color-dark;
+    z-index: 999;
+
+    &::before {
+        position: fixed;
+        bottom: 30.8%;
+        left: 12.3%;
+        content: '';
+        width: 30px;
+        height: 3px;
+        background-color: @color-dark;
+        transition: .5s;
+    }
+}
+
+.current-index-1 {
+    &::before {
+        bottom: 30.8% !important;
+    }
+}
+.current-index-2 {
+    &::before {
+        bottom: 23.8% !important;
+    }
+}
+.current-index-3 {
+    &::before {
+        bottom: 16.8% !important;
+    }
+}
+.current-index-4 {
+    &::before {
+        bottom: 9.8% !important;
+    }
+}
+.current-index-5 {
+    &::before {
+        bottom: 2.8% !important;
+    }
+}
+
 #header {
     position: relative;
     width: 100%;
@@ -113,26 +161,6 @@ a {
             margin: -80px 0;
         }
     }
-
-    .header-design {
-        position: fixed;
-        bottom: 0;
-        left: 13%;
-        width: 3px;
-        height: 300px;
-        background-color: @color-dark;
-        z-index: 999;
-
-        &::before {
-            position: fixed;
-            bottom: 30%;
-            left: 12.3%;
-            content: '';
-            width: 30px;
-            height: 3px;
-            background-color: @color-dark;
-        }
-    }
 }
 
 #about {
@@ -159,12 +187,11 @@ a {
             align-self: flex-start;
             box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 
-            &::after {
-                content: '';
+            .image-bottom {
                 position: absolute;
                 top: 10%;
                 left: 5%;
-                width: 100%;
+                width: 0%;
                 height: 100%;
                 background-color: @color-orange;
                 z-index: -1;
@@ -262,8 +289,7 @@ a {
         .background-content {
             position: absolute;
             top: 50%;
-            left: 42%;
-            // transform: rotate(-90deg);
+            left: 45%;
             font-size: 5rem;
             font-weight: 300;
         }
@@ -273,7 +299,7 @@ a {
             left: 100%;
             top: 50%;
             transform: translate(-50%, -50%);
-            width: 60%;
+            width: 30%;
         }
     }
 
@@ -288,6 +314,11 @@ a {
             width: 50px;
             height: 5px;
             background-color: @color-dark;
+            transition: .5s;
+        }
+
+        .active {
+            height: 100px;
         }
     }
 }
@@ -320,7 +351,7 @@ a {
         justify-content: center;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         .title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             letter-spacing: 2px;
             margin-bottom: 15px;

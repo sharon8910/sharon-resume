@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,131 +8,224 @@
     <title>Sharon</title>
     <link rel="stylesheet" href="./style.css">
     <!-- fontawesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css" integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css"
+        integrity="sha512-QfDd74mlg8afgSqm3Vq2Q65e9b3xMhJB4GZ9OcHDVy1hZ6pqBJPWWnMsKDXM7NINoKqJANNGBuVRIpIJ5dogfA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <div class="current">001</div>
-    <ul class="menu">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">EXPERIENCE</a></li>
-        <li><a href="#">AUTOBIOGRAPHY</a></li>
-        <li><a href="#">CERTIFICATE</a></li>
-    </ul>
-    <div id="header">
-        <div class="page">HOME</div>
-        <div class="image"></div>
-        <div class="header-title">
-            <p>SHARON</p>
-            <p>RESUME</p>
-        </div>
-        <div class="header-design"></div>
-    </div>
-
-    <div id="about">
-        <div class="current">002</div>
-        <div class="bar about-title-bar">
-            <div class="image"></div>
-            <div class="title">
-                <div class="name">
-                    <div class="en-name">SHARON</div>
-                    <div class="cn-name">林郁軒</div>
-                </div>
-            </div>
-        </div>
-        <div class="bar about-content-bar">
-            <div class="content">
-                <div class="content-box">
-                    <ul>
-                        <li>學校: <span>國立台中科技大學</span></li>
-                        <li>科系: <span>財務金融系</span></li>
-                        <li>手機: <span>0961139336</span></li>
-                        <li>Email: <span>sharon891010@gmail.com</span></li>
-                        <li>Skill: 
-                            <span>
-                                <i class="fas fa-file-powerpoint"></i><span>Powerpoint</span>、
-                                <i class="fas fa-file-excel"></i><span>Excel</span>、
-                                <i class="fas fa-file-word"></i><span>Word</span>
-                            </span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="image"></div>
-        </div>
-    </div>
-
-    <div id="experience">
-        <div class="current">003</div>
-        <div class="experience-background">
-            <div class="background-title">EXPERIENCE</div>
-            <div class="background-content">WORK +</div>
-            <img class="experience-img" src="./image/experience01.jpg" alt="">
-        </div>
-        <ul class="experience-toggle">
-            <li></li>
-            <li></li>
-            <li></li>
+    <div id="app">
+        <div class="current">001</div>
+        <ul class="menu">
+            <li v-for="(m, index) in menu"><a :href="m.url">{{ m.name }}</a></li>
         </ul>
-    </div>
+        <div id="header">
+            <div class="page">{{ currentPage }}</div>
+            <div class="image"></div>
+            <div class="header-title">
+                <p>{{ headerInfo.contentA }}</p>
+                <p>{{ headerInfo.contentB }}</p>
+            </div>
+            <div class="header-design"></div>
+        </div>
 
-    <div id="autobiography">
-        <div class="current">004</div>
-        <div class="img"></div>
-        <div class="detail">
-            <div class="title">自我介紹與人格特質</div>
-            <div class="content">
-                我是林郁軒，目前就讀國立台中科技大學，主修財務金融系。<br>
-                我熱愛閱讀與學習，也對財經相關領域有濃厚的興趣與嚮往。我願意付出實際行動，也願意接受新挑戰，<br>「任何事情都全力以赴」是我人生的態度。
+        <div id="about">
+            <div class="current">002</div>
+            <div class="bar about-title-bar">
+                <div class="image">
+                    <div class="image-bottom"></div>
+                </div>
+                <div class="title">
+                    <div class="name">
+                        <div class="en-name">{{ headerInfo.contentA }}</div>
+                        <div class="cn-name">{{ headerInfo.contentC }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bar about-content-bar">
+                <div class="content">
+                    <div class="content-box">
+                        <ul>
+                            <li v-for="(info, index) in aboutInfo" :key="index">
+                                {{ info.title }}: <span>{{ info.content }}</span>
+                            </li>
+                            <li>Skill:
+                                <span>
+                                    <i class="fas fa-file-powerpoint"></i>
+                                    <span>Powerpoint</span>、
+                                    <i class="fas fa-file-excel"></i>
+                                    <span>Excel</span>、
+                                    <i class="fas fa-file-word"></i>
+                                    <span>Word</span>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div 
+                class="image" 
+                data-aos="fade-left"
+                data-aos-offset="200"
+                data-aos-delay="100"
+                ></div>
             </div>
         </div>
-        <div class="list">
-            <ul>
-                <li>
-                    01 - 
-                    <a href="javascript:;">自我介紹與人格特質</a>
-                </li>
-                <li>
-                    02 - 
-                    <a href="javascript:;">社團經歷</a>
-                </li>
-                <li>
-                    03 - 
-                    <a href="javascript:;">工作經歷</a>
+
+        <div id="experience">
+            <div class="current">003</div>
+            <div class="experience-background">
+                <div 
+                    class="background-title"
+                    data-aos="fade-down"
+                >EXPERIENCE</div>
+                <div class="background-content" data-aos="flip-left">{{ experience[experienceIndex].content }} +</div>
+                <img 
+                    class="experience-img" 
+                    :src="experience[experienceIndex].img" 
+                >
+            </div>
+            <ul class="experience-toggle">
+                <li 
+                    v-for="(exp, index) in experience" 
+                    :key="index" 
+                    :class="[experienceIndex == index ? 'active' : '']"
+                    @click="experienceIndex = index"
+                    ></li>
+            </ul>
+        </div>
+
+        <div id="autobiography">
+            <div class="current">004</div>
+            <div 
+                class="img" 
+                data-aos="flip-right"
+                data-aos-offset="200"
+                data-aos-delay="100"></div>
+            <div class="detail">
+                <div class="title">{{ autobiography[autobiographyIndex].title }}</div>
+                <div class="content">
+                    {{ autobiography[autobiographyIndex].content }}
+                </div>
+            </div>
+            <div class="list">
+                <ul>
+                    <li 
+                        v-for="(item, index) in autobiography" 
+                        :key="index"
+                        @click="autobiographyIndex = index"
+                        data-aos="flip-left"
+                        :data-aos-delay="index * 300"
+                        >
+                        0{{index+1}} -
+                        <a href="javascript:;">{{ item.title }}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="certificate">
+            <div class="current">005</div>
+            <div class="img">
+                <img 
+                    :src="certificateImage[certificateIndex]" alt="certificateImage"
+                >
+            </div>
+            <ul class="list">
+                <li v-for="(item, index) in certificate" :key="index">
+                    <i class="fas fa-balance-scale"></i>
+                    <a 
+                        :class="[certificateIndex == index ? 'active' : '']"
+                        @click="certificateIndex = index"    
+                    >
+                        {{ item }}
+                    </a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <div id="certificate">
-        <div class="current">005</div>
-        <div class="img">
-            <img src="./image/certificate/LINE_ALBUM_2022730_220730_0.jpg" alt="">
-        </div>
-        <ul class="list">
-            <li>
-                <i class="fas fa-balance-scale"></i>
-                <a href="javascript:;" class="active">財產保險業務員</a>
-            </li>
-            <li>
-                <i class="fas fa-balance-scale"></i>
-                <a href="javascript:;">信託業務人員</a>
-            </li>
-            <li>
-                <i class="fas fa-balance-scale"></i>
-                <a href="javascript:;">金融常識與職業道德</a>
-            </li>
-            <li>
-                <i class="fas fa-balance-scale"></i>
-                <a href="javascript:;">證券商普通業務員</a>
-            </li>
-            <li>
-                <i class="fas fa-balance-scale"></i>
-                <a href="javascript:;">軟體應用(丙級)</a>
-            </li>
-        </ul>
-    </div>
-
+    <!-- vue3 -->
+    <script src="./vue.global.js"></script>
+    <!-- animate -->
+    <script src="./anime.min.js"></script>
+    <!-- main js -->
     <script src="./app.js"></script>
+    <!-- scrollMagic -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- other -->
+    <script>
+        AOS.init()
+        // dom
+        let pageName = document.querySelector('.page');
+        let el       = document.querySelector('.image-bottom');
+
+        // scrollMagic
+        let scrollMagicController = new ScrollMagic.Controller();
+        let tl1 = anime.timeline({autoplay: false});
+        let tl2 = anime.timeline({autoplay: false});
+        let s1a1 = {
+            targets: [el],
+            width: '100%',
+            easing: 'easeInOutQuad',
+        }
+        tl1.add(s1a1);
+
+        let scene1 = new ScrollMagic.Scene({
+            triggerElement: "#header",
+            offset: 100,
+            triggerHook: 0,
+            reverse: true
+        }).on("progress", function (event) {
+            pageName.innerHTML = "Home"
+        })
+        .setClassToggle('.header-design', 'current-index-1')
+        .addTo(scrollMagicController)
+
+        let scene2 = new ScrollMagic.Scene({
+            triggerElement: "#about",
+            reverse: true
+        }).on("progress", function (event) {
+            tl1.play()
+            pageName.innerHTML = "About"
+        })
+        .setClassToggle('.header-design', 'current-index-2')
+        .addTo(scrollMagicController)
+
+        let scene3 = new ScrollMagic.Scene({
+            triggerElement: "#experience",
+            reverse: true
+        }).on("progress", function (event) {
+            pageName.innerHTML = "EXP"
+        })
+        .setClassToggle('.header-design', 'current-index-3')
+        .addTo(scrollMagicController)
+
+        let scene4 = new ScrollMagic.Scene({
+            triggerElement: "#autobiography",
+            reverse: true
+        }).on("progress", function (event) {
+            pageName.innerHTML = "ABG"
+        })
+        .setClassToggle('.header-design', 'current-index-4')
+        .addTo(scrollMagicController)
+
+        let scene5 = new ScrollMagic.Scene({
+            triggerElement: "#certificate",
+            offset: 100,
+            reverse: true
+        }).on("progress", function (event) {
+            pageName.innerHTML = "Linces"
+        })
+        .setClassToggle('.header-design', 'current-index-5')
+        .addTo(scrollMagicController)
+
+    </script>
 </body>
+
 </html>
